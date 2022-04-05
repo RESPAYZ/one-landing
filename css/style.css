@@ -1,0 +1,339 @@
+@charset "UTF-8";
+/* import files */
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/* media */
+@media (min-width: 320px) and (max-width: 910px) {
+  .header-container .header-container__link .header-container__link-item {
+    display: none;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1440px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* variables */
+/* mixin */
+.wrapper {
+  background-color: #000;
+  max-width: 1440px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 90em;
+  height: 5em;
+  margin: 0 auto;
+  /* t */
+  /* скрываем чекбокс */
+  /* стилизуем кнопку */
+  /* добавляем "гамбургер" */
+  /* контейнер меню */
+  /* элементы меню */
+  /* t */
+}
+
+.header-container .header-container__link, .header-container .header-container__link-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  width: 50em;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.header-container .header-container__link .item, .header-container .header-container__link-item .item {
+  color: #fff;
+  position: relative;
+}
+
+.header-container .header-container__link .item:after, .header-container .header-container__link-item .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.header-container .header-container__link .item:hover:after, .header-container .header-container__link-item .item:hover:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: red;
+  -webkit-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.header-container #menu__toggle {
+  opacity: 0;
+}
+
+.header-container .menu__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* используем flex для центрирования содержимого */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* центрируем содержимое кнопки */
+  width: 26px;
+  height: 26px;
+  z-index: 1;
+}
+
+.header-container .menu__btn > span,
+.header-container .menu__btn > span::before,
+.header-container .menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+
+.header-container .menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.header-container .menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.header-container .menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #ECEFF1;
+  -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header-container .menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-container .menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+.header-container #menu__toggle:checked ~ .menu__btn > span {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header-container #menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.header-container #menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.header-container #menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.header-container .header-container__button {
+  width: 140px;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 1;
+}
+
+.header-container .header-container__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.header-container .header-container__button:hover::before {
+  width: 100%;
+}
+
+.header-container .header-container__button:hover {
+  color: #000;
+}
+
+.header-container .header-container__button:active:before {
+  background: #fff;
+}
+
+.main-intro__container {
+  display: inline-block;
+  position: relative;
+}
+
+.main-intro__container .intro-bg {
+  display: block;
+  width: 100%;
+}
+
+.main-intro__container .main-intro__caption {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #C0C0C0;
+  font-weight: 400;
+}
+
+.main-intro__container .main-intro__caption h1 {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.main-intro__container .main-intro__caption p {
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=style.css.map */
